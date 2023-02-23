@@ -68,7 +68,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	}//
 
 	@Override
-	public T fjern(T element) { //Denne skal vi se på litt senere
+	public T fjern(T element) { //Denne skal vi se pï¿½ litt senere
 
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
@@ -80,7 +80,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 			resultat = start.getElement();
 			start = start.getNeste();
 			antall--;
-		} else {// Gjennomgår den kjedete strukturen
+		} else {// Gjennomgï¿½r den kjedete strukturen
 			forgjenger = start;
 			aktuell = start.getNeste();
 			for (int sok = 2; sok <= antall && !funnet; sok++) {
@@ -115,8 +115,8 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		return funnet;
 	}
 	/*
-	 * Når vi overkjører (override) equals- meteoden er det anbefalt at vi også
-	 * overkjører hashcode-metoden da en del biblioteker bruker hascode sammen med
+	 * Nï¿½r vi overkjï¿½rer (override) equals- meteoden er det anbefalt at vi ogsï¿½
+	 * overkjï¿½rer hashcode-metoden da en del biblioteker bruker hascode sammen med
 	 * equals. Vi kommer tilbake til forklaring og bruk av hashcode senere i faget.
 	 */
 
@@ -148,7 +148,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		} else {
 			Iterator<T> teller = m2.iterator();
 
-			//Fyll ut
+			Iterator<T> teller = m2.iterator();
+			while(teller.hasNext() && likeMengder){
+
+			}
 		}
 		return true;// Midlertidig
 	}
@@ -201,7 +204,13 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		 * Fyll ut senere
 		 * 
 		 */
+		for(T element : this) {
+			differensM.leggTil(element);
 
+			hvis(this.equals(m2<T>)){
+				m2.fjern(T element);
+			}
+		}
 		return differensM;
 	}
 
