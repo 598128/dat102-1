@@ -206,8 +206,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		// TODO
 		MengdeADT<T> differensM = new KjedetMengde<T>();
 		T element;
-		for(T element : this) {
-			if(!m2.inneholder(element)){
+		Iterator<T> teller = m2.iterator();
+		while (iterator.hasNext()) {
+			T element = iterator.next();
+			if (!m2.inneholder(element)) {
 				differensM.leggTil(element);
 			}
 		}
@@ -219,6 +221,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		// TODO
 		boolean erUnderMengde = true;
 		// ... Fyll ut senere
+
 		return erUnderMengde;
 	}
 
