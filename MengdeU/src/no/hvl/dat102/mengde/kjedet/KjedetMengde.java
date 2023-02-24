@@ -201,15 +201,9 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		// TODO
 		MengdeADT<T> differensM = new KjedetMengde<T>();
 		T element;
-		/*
-		 * Fyll ut senere
-		 * 
-		 */
 		for(T element : this) {
-			differensM.leggTil(element);
-
-			hvis(this.equals(m2<T>)){
-				m2.fjern(T element);
+			if(!m2.inneholder(element)){
+				differensM.leggTil(element);
 			}
 		}
 		return differensM;
