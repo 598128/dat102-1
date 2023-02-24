@@ -188,10 +188,15 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		// TODO
 		MengdeADT<T> snittM = new KjedetMengde<T>();
 		T element;
-		/*
-		 * Fyll ut senere
-		 * 
-		 * if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
+
+		Iterator<T> teller = m2.iterator();
+		while(teller.hasNext()){
+			T element = teller.next();
+			if(m2.inneholder(element)) {
+				snitt.leggTil(element);
+			}
+		}
+		/* if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
 		 */
 		return snittM;
 	}
