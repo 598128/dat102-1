@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dat102v2018.iml" filepath="$PROJECT_DIR$/dat102v2018.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parantessjekk/parantessjekk.iml" filepath="$PROJECT_DIR$/parantessjekk/parantessjekk.iml" />
       <module fileurl="file://$PROJECT_DIR$/rekursjon/rekursjon.iml" filepath="$PROJECT_DIR$/rekursjon/rekursjon.iml" />
     </modules>
   </component>

@@ -193,11 +193,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		while(teller.hasNext()){
 			T element = teller.next();
 			if(m2.inneholder(element)) {
-				snitt.leggTil(element);
+				snittM.leggTil(element);
 			}
 		}
-		/* if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
-		 */
+
 		return snittM;
 	}
 
@@ -218,11 +217,14 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
-		// TODO
-		boolean erUnderMengde = true;
-		// ... Fyll ut senere
 
-		return erUnderMengde;
+		while (it.hasNext()) {
+			T element = it.next();
+			if (!this.inneholder(element)) {
+				return false;
+			}
+
+		return true;
 	}
 
 	@Override
