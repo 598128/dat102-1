@@ -36,4 +36,23 @@ public class ps implements Parentessjekker {
     public boolean erBalansert(String s){
 
     }
+
+    @Override
+    public boolean erBalansert(String s) {
+        Stabel<Character> stabel = new TabellStabel<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (erParentes(c)) {
+                if (erVenstreparentes(c)) {
+                    stabel.leggInn(c);
+                } else {
+                    if (stabel.erTom() || !erPar(stabel.taUt(), c)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return stabel.erTom();
+    }
+
 }
