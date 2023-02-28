@@ -33,6 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/TabellStabelUtenUnntak/TestStabel" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TabellStabelUtenUnntak/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TekstFil/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="18" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
