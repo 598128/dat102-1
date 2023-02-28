@@ -63,14 +63,16 @@ public class DobbelKjedetOrdnetListe<T extends Comparable<T>> implements DobbelK
 	 */
 	private DobbelNode<T> finn(T el) {
 		DobbelNode<T> aktuell = foerste.getNeste();
-		while (aktuell != siste) {
-			if (aktuell.getElement().equals(el)) {
-				return aktuell;
-			}
+		while (aktuell != siste && aktuell.getElement().compareTo(el) < 0) {
 			aktuell = aktuell.getNeste();
 		}
-		return null;
+		if (aktuell == siste || aktuell.getElement().compareTo(el) > 0) {
+			return null; // elementet finnes ikke i listen
+		} else {
+			return aktuell;
+		}
 	}
+
 
 
 	@Override
