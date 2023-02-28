@@ -217,9 +217,9 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
-
-		while (it.hasNext()) {
-			T element = it.next();
+		Iterator<T> teller = m2.iterator();
+		while (teller.hasNext()) {
+			T element = teller.next();
 			if (!this.inneholder(element)) {
 				return false;
 			}
