@@ -2,6 +2,7 @@ package no.hvl.dat102.kjedet;
 
 import no.hvl.dat102.adt.DobbelKjedetOrdnetListeADT;
 import no.hvl.dat102.exceptions.EmptyCollectionException;
+import no.hvl.dat102.kjedet.DobbelNode;
 
 public class DobbelKjedetOrdnetListe<T extends Comparable<T>> implements DobbelKjedetOrdnetListeADT<T> {
 	private DobbelNode<T> foerste;
@@ -10,12 +11,18 @@ public class DobbelKjedetOrdnetListe<T extends Comparable<T>> implements DobbelK
 
 	public DobbelKjedetOrdnetListe(T minVerdi, T maksVerdi) {
 		// Første node
-		//TODO
+		foerste = new DobbelNode<T>(null);
+		foerste.setNeste(new DobbelNode<T>(minVerdi));
+		foerste.getNeste().setForrige(foerste);
 		// Siste node
-		//TODO
+		siste = new DobbelNode<T>(null);
+		siste.setForrige(new DobbelNode<T>(maksVerdi));
+		siste.getForrige().setNeste(siste);
 		// Kjeding
-		//TODO
+		foerste.getNeste().setNeste(siste.getForrige());
+		antall = 0;
 	}
+
 
 	@Override
 	public void leggTil(T el) {
@@ -55,10 +62,16 @@ public class DobbelKjedetOrdnetListe<T extends Comparable<T>> implements DobbelK
 	 * null-referansen
 	 */
 	private DobbelNode<T> finn(T el) {
+		DobbelNode<T> aktuell = foerste.getNeste();
+		while (aktuell != siste) {
+			if (aktuell.getElement().equals(el)) {
+				return aktuell;
+			}
+			aktuell = aktuell.getNeste();
+		}
 		return null;
-		//TODO
-
 	}
+
 
 	@Override
 	public boolean erTom() {
@@ -94,5 +107,12 @@ public class DobbelKjedetOrdnetListe<T extends Comparable<T>> implements DobbelK
 		return resultat;
 
 	}
-
+	public void visListe() {
+		DobbelNode<T> aktuell = foerste.getNeste();
+		while (aktuell != siste) {
+			System.out.print(aktuell.getElement() + " ");
+			aktuell = aktuell.getNeste();
+		}
+		System.out.println();
+	}
 }
