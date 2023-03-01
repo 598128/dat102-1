@@ -84,6 +84,4 @@ public class ps implements Parentessjekker {
             }
         }
     }
-
-
 }
