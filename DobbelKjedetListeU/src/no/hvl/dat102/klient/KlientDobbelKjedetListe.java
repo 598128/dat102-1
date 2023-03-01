@@ -1,19 +1,33 @@
 package no.hvl.dat102.klient;
 
 import no.hvl.dat102.kjedet.DobbelKjedetOrdnetListe;
+import no.hvl.dat102.kjedet.DobbelNode;
 
 public class KlientDobbelKjedetListe {
 
 	public static void main(String[] args) {
 		String ord[] = { "o", "a", "s", "m", "e", "k", "c" };
+		DobbelKjedetOrdnetListe<String> liste = new DobbelKjedetOrdnetListe<String>(new String("AAA"), new String("zzz"));
 
-		DobbelKjedetOrdnetListe<String> liste = new DobbelKjedetOrdnetListe(new String("AAA"), new String("zzz"));
-		// Klienten bør sjekke på at alle verdiene ligger innenfor grensene
+		//DobbelKjedetOrdnetListe<String> liste = new DobbelKjedetOrdnetListe(new String("AAA"), new String("zzz"));
+		// Klienten bï¿½r sjekke pï¿½ at alle verdiene ligger innenfor grensene
 		// Legger data inn i listen
 		for (int i = 0; i < ord.length; i++) {
 			liste.leggTil(ord[i]);
 
 		}
+		
+	    // Finn og skriv ut "m" i listen
+	    DobbelNode<String> m = liste.finn("m");
+	    if (m != null) {
+	        System.out.println("Fant " + m.getElement());
+	    } else {
+	        System.out.println("Fant ikke m i listen.");
+	    }
+
+	    // Skriv ut hele listen
+	    liste.visListe();
+
 		// Utskrift foran
 		System.out.println(liste);
 
@@ -31,5 +45,5 @@ public class KlientDobbelKjedetListe {
 		System.out.println(liste);
 
 	}
-
+	
 }
